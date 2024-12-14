@@ -50,6 +50,8 @@ From here, the reward and a new state is observed
 - For being in the between-center pipe gap, Flappy Bird gets an additional 2 points of reward
 - For crossing a pipe (increasing the score), Flappy Bird gets an additional 10 points of reward
 
+A new action is next chosen with the epsilon-greedy algorithm, with an epsilon value of 2%
+
 Then the Eligibility Trace for the state action pair is increased by 1, and the delta is calculated as reward + gamma * Q(s t+1, a t+1) - q(st, at)
 
 Each state action pair in the N dictionary is then looped through. Q for each state action is set to the existing Q(s,a) + alpha * delta * N(s,a), and N for each state action is set to gamma * lambda * N(s,a).
@@ -61,3 +63,5 @@ Finally, the old state and action are set to the new state and action, and the p
 While I was able to successfully apply the algorithm to play "Flappy Bird", I wish that I was able to use more fine grained measurements rather than interpolations for the state. The maximum score I observed Flappy Bird get in a run was 22. This is technically a successful result, I was hoping to train Flappy Bird to fly "endlessly" without colliding. 
 
 Part of the reason I think this failed is because there was a significant data loss by interpolating my measurements, however it was simply taking too long for the table to converge (In total around 7.2 million state action pairs, did not converge with over 8 hours in runs). For further research, I would potentially want to try another approach such as linear approximation, as I believe it could potentially allow for Flappy Bird to learn to fly endlessly.
+
+I also was not entirely sure on how to tune my Sarsa-lambda constants (Learning Rate, Discount Rate, Discount). I might have been able to get better results with some tweaking to those values as well.
