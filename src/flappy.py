@@ -114,9 +114,6 @@ class Flappy:
 
         # loop (game running)
         while True:
-            #Current gameState
-            s0 = self.agent.getInterpolatedState()
-
             # Current action, flap if action is 1
             if a0 == 1:
                 self.player.flap()
