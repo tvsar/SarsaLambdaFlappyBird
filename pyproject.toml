@@ -6,7 +6,7 @@ description = "Flappy Bird in Pygame. Sarsa Lambda Learning Agent added by Tharu
 requires-python = ">=3.9,<4"
 dependencies = [
     "pygame == 2.4.0",
-    "numpy == "1.24.4",
+    "numpy == 1.24.4",
     "pandas == 2.0.3"
     ]
 
