@@ -60,7 +60,7 @@ Finally, the old state and action are set to the new state and action, and the p
 
 ## Measures of Success/Failure:
 
-While I was able to successfully apply the algorithm to play "Flappy Bird", I wish that I was able to use more fine grained measurements rather than interpolations for the state. The maximum score I observed Flappy Bird get in a run was 22. This is technically a successful result, I was hoping to train Flappy Bird to fly "endlessly" without colliding. 
+While I was able to successfully apply the algorithm to play "Flappy Bird", I wish that I was able to use more fine grained measurements rather than interpolations for the state. The maximum score I observed Flappy Bird get in a run was 25. This is technically a successful result, I was hoping to train Flappy Bird to fly "endlessly" without colliding. 
 
 Part of the reason I think this failed is because there was a significant data loss by interpolating my measurements, however it was simply taking too long for the table to converge (In total around 7.2 million state action pairs, did not converge with over 8 hours in runs). For further research, I would potentially want to try another approach such as linear approximation, as I believe it could potentially allow for Flappy Bird to learn to fly endlessly.
 
